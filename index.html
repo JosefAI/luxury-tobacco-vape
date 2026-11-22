@@ -69,22 +69,24 @@
         min-height: 44px;
         padding: 2px 0;
       }
-      .crown { flex: 0 0 auto; width: 52px; height: 38px; }
+      .crown { flex: 0 0 auto; width: 64px; height: 46px; }
       .wordmark { line-height: 1; text-align: center; }
       .wordmark .lux {
         display: block;
         font-family: var(--serif);
         font-weight: 700;
         font-size: 1.9rem;
-        letter-spacing: 0.12em;
+        letter-spacing: 0.1em;
         color: #fff;
       }
+      .swoosh { display: block; width: 96%; height: 7px; margin: 1px auto 0; }
       .wordmark .tv {
         display: block;
-        margin-top: 3px;
-        font-size: 0.62rem;
-        font-weight: 800;
-        letter-spacing: 0.48em;
+        margin-top: 4px;
+        font-family: var(--serif);
+        font-size: 0.72rem;
+        font-weight: 700;
+        letter-spacing: 0.38em;
         color: var(--gold);
       }
       nav.main-nav {
@@ -129,8 +131,8 @@
       @media (min-width: 760px) {
         nav.main-nav { display: flex; flex: 1 1 auto; justify-content: center; }
         .header-inner { padding: 14px 24px; }
-        .crown { width: 56px; height: 41px; }
-        .wordmark .lux { font-size: 2rem; }
+        .crown { width: 68px; height: 49px; }
+        .wordmark .lux { font-size: 2.05rem; }
       }
 
       /* ---------- Hero ---------- */
@@ -467,9 +469,10 @@
         }
         section { scroll-margin-top: 16px; }
         /* Phone header: stacked logo like the design, slightly smaller. */
-        .crown { width: 46px; height: 34px; }
+        .crown { width: 54px; height: 39px; }
         .wordmark .lux { font-size: 1.55rem; }
-        .wordmark .tv { font-size: 0.56rem; letter-spacing: 0.44em; }
+        .wordmark .tv { font-size: 0.64rem; letter-spacing: 0.36em; }
+        .swoosh { height: 6px; }
         /* Hero on phones: text first, then the FULL image below it — nothing
            cropped, no text over the image (Wael 2026-11-21: the hero top was
            cut off on his phone). The overlay is dropped on phones because
@@ -513,16 +516,20 @@
     <header>
       <div class="header-inner">
         <a class="brand" href="#home" aria-label="Luxury Tobacco and Vape — home">
-          <svg class="crown" viewBox="0 0 64 44" aria-hidden="true" focusable="false">
-            <path d="M6 34 L4 12 L18 24 L32 6 L46 24 L60 12 L58 34 Z" fill="#e9b949"/>
-            <circle cx="4" cy="10" r="2.8" fill="#e9b949"/>
-            <circle cx="32" cy="4" r="2.8" fill="#e9b949"/>
-            <circle cx="60" cy="10" r="2.8" fill="#e9b949"/>
-            <rect x="6" y="36" width="52" height="5" rx="2" fill="#e9b949"/>
-            <circle cx="32" cy="28" r="2.4" fill="#0e0620"/>
+          <svg class="crown" viewBox="0 0 64 46" aria-hidden="true" focusable="false">
+            <path d="M6 36 L4 14 L16 26 L32 6 L48 26 L60 14 L58 36 Q32 42 6 36 Z" fill="#e9b949"/>
+            <circle cx="4" cy="12" r="2.6" fill="#e9b949"/>
+            <circle cx="32" cy="4" r="2.6" fill="#e9b949"/>
+            <circle cx="60" cy="12" r="2.6" fill="#e9b949"/>
+            <circle cx="32" cy="30" r="2.2" fill="#0e0620"/>
+            <circle cx="17" cy="31" r="1.6" fill="#0e0620"/>
+            <circle cx="47" cy="31" r="1.6" fill="#0e0620"/>
           </svg>
           <span class="wordmark">
             <span class="lux">LUXURY</span>
+            <svg class="swoosh" viewBox="0 0 200 12" aria-hidden="true" focusable="false">
+              <path d="M1 8 C 60 1, 140 1, 199 6 C 140 10, 60 12, 1 8 Z" fill="#e9b949"/>
+            </svg>
             <span class="tv">TOBACCO &amp; VAPE</span>
           </span>
         </a>
