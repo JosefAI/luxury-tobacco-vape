@@ -60,29 +60,31 @@
       }
       .brand {
         display: flex;
+        flex-direction: column;
         align-items: center;
-        gap: 11px;
+        gap: 1px;
         text-decoration: none;
-        flex: 1 1 auto;
+        flex: 0 0 auto;
         min-width: 0;
         min-height: 44px;
+        padding: 2px 0;
       }
-      .crown { flex: 0 0 auto; width: 40px; height: 34px; }
-      .wordmark { line-height: 1; }
+      .crown { flex: 0 0 auto; width: 52px; height: 38px; }
+      .wordmark { line-height: 1; text-align: center; }
       .wordmark .lux {
         display: block;
         font-family: var(--serif);
         font-weight: 700;
-        font-size: 1.42rem;
-        letter-spacing: 0.14em;
+        font-size: 1.9rem;
+        letter-spacing: 0.12em;
         color: #fff;
       }
       .wordmark .tv {
         display: block;
-        margin-top: 4px;
-        font-size: 0.6rem;
+        margin-top: 3px;
+        font-size: 0.62rem;
         font-weight: 800;
-        letter-spacing: 0.42em;
+        letter-spacing: 0.48em;
         color: var(--gold);
       }
       nav.main-nav {
@@ -125,17 +127,22 @@
         background: rgba(217, 43, 43, 0.08);
       }
       @media (min-width: 760px) {
-        nav.main-nav { display: flex; }
+        nav.main-nav { display: flex; flex: 1 1 auto; justify-content: center; }
         .header-inner { padding: 14px 24px; }
-        .crown { width: 46px; height: 39px; }
-        .wordmark .lux { font-size: 1.6rem; }
+        .crown { width: 56px; height: 41px; }
+        .wordmark .lux { font-size: 2rem; }
       }
 
       /* ---------- Hero ---------- */
       .hero {
         position: relative;
         overflow: hidden;
-        background: var(--ink-deep);
+        /* Deep purple glow behind the image (sampled from the still-life's own
+           edge tones) so the hero reads as one color — Wael 2026-11-21: the
+           flat ink background showed as a dark band next to the image. */
+        background:
+          radial-gradient(70% 100% at 85% 50%, #2b1a35 0%, var(--ink-deep) 65%),
+          var(--ink-deep);
       }
       .hero-bg {
         position: absolute;
@@ -150,7 +157,9 @@
         object-position: center;
       }
       @media (min-width: 760px) {
-        .hero-bg { width: 64%; object-position: center; }
+        /* Image flush to the right edge — any letterbox gap falls on the left,
+           under the dark gradient, never as a visible band on the right. */
+        .hero-bg { width: 64%; object-position: right center; }
       }
       .hero::after {
         content: "";
@@ -457,6 +466,10 @@
           box-shadow: inset 0 -2px 0 var(--gold);
         }
         section { scroll-margin-top: 16px; }
+        /* Phone header: stacked logo like the design, slightly smaller. */
+        .crown { width: 46px; height: 34px; }
+        .wordmark .lux { font-size: 1.55rem; }
+        .wordmark .tv { font-size: 0.56rem; letter-spacing: 0.44em; }
         /* Hero on phones: text first, then the FULL image below it — nothing
            cropped, no text over the image (Wael 2026-11-21: the hero top was
            cut off on his phone). The overlay is dropped on phones because
@@ -500,12 +513,13 @@
     <header>
       <div class="header-inner">
         <a class="brand" href="#home" aria-label="Luxury Tobacco and Vape — home">
-          <svg class="crown" viewBox="0 0 48 40" aria-hidden="true" focusable="false">
-            <path d="M4 32 L2 12 L14 22 L24 6 L34 22 L46 12 L44 32 Z" fill="#e9b949"/>
-            <rect x="4" y="34" width="40" height="4" rx="1.5" fill="#e9b949"/>
-            <circle cx="24" cy="14" r="2.6" fill="#0e0620"/>
-            <circle cx="10" cy="24" r="2" fill="#0e0620"/>
-            <circle cx="38" cy="24" r="2" fill="#0e0620"/>
+          <svg class="crown" viewBox="0 0 64 44" aria-hidden="true" focusable="false">
+            <path d="M6 34 L4 12 L18 24 L32 6 L46 24 L60 12 L58 34 Z" fill="#e9b949"/>
+            <circle cx="4" cy="10" r="2.8" fill="#e9b949"/>
+            <circle cx="32" cy="4" r="2.8" fill="#e9b949"/>
+            <circle cx="60" cy="10" r="2.8" fill="#e9b949"/>
+            <rect x="6" y="36" width="52" height="5" rx="2" fill="#e9b949"/>
+            <circle cx="32" cy="28" r="2.4" fill="#0e0620"/>
           </svg>
           <span class="wordmark">
             <span class="lux">LUXURY</span>
